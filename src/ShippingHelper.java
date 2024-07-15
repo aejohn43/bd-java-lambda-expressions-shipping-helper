@@ -28,6 +28,13 @@ public class ShippingHelper {
     public List<List<Integer>> checkOrders(List<List<Integer>> orderList) {
         List<List<Integer>> orders = new ArrayList<>(orderList);
         // TODO Use list's removeIf method to remove orders larger than one item. Use a lambda expression to implement
+        orders.removeIf((order) -> {
+            if (order.size() == 1) {
+                return false;
+            }
+            return true;
+        });
+
         //  the predicate interface. Use the removeIf method on the list called orders, a copy of the argument
         //  orderList.
         return orders;
